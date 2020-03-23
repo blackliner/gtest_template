@@ -1,0 +1,18 @@
+CMAKE_MINIMUM_REQUIRED (VERSION 3.10)
+
+PROJECT (
+  my_project
+  VERSION 0.0.0
+  LANGUAGES CXX)
+
+LIST (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+INCLUDE (CompilerWarnings-x86)
+INCLUDE (DownloadProject)
+INCLUDE (GoogleTestDownloadAndBuild)
+INCLUDE (adas_cmake_functions)
+
+ENABLE_TESTING ()
+
+ADD_COMPILER_FLAGS ()
+
+ADD_SUBDIRECTORY (my_project)
