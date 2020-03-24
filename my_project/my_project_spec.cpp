@@ -3,5 +3,5 @@
 #include "my_project.hpp"
 
 TEST(First, test) {
-  EXPECT_EQ(42, gimme_gedoens());
+  EXPECT_EQ(42, CalculateEverything());
 }

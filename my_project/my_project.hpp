@@ -1,3 +1,4 @@
-int gimme_gedoens(){
+
+int CalculateEverything(){
     return 42;
 }
