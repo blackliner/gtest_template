@@ -1,6 +1,3 @@
-#include<string>
+#include <string>
 
-std::string ConvertArabicToRoman(int)
-{
-  return "I";
-}
+std::string ConvertArabicToRoman(int);
