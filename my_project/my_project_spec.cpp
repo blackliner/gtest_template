@@ -21,3 +21,16 @@ TEST(Roman, convert_five) {
 TEST(Roman, convert_six) {
   EXPECT_EQ("VI", ConvertArabicToRoman(6));
 }
+
+TEST(Roman, convert_ten) {
+  EXPECT_EQ("X", ConvertArabicToRoman(10));
+}
+
+TEST(Roman, convert_twelve) {
+  EXPECT_EQ("XII", ConvertArabicToRoman(12));
+}
+
+TEST(Roman, convert_twentyone) {
+  EXPECT_EQ("XXI", ConvertArabicToRoman(21));
+}
+
