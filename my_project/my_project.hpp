@@ -1,6 +1,8 @@
 #ifndef MY_PROJECT_H
 #define MY_PROJECT_H
 
-int add(int , int );
+#include <string>
+
+std::string romanize(int digit);
 
 #endif  // MY_PROJECT_H

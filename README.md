@@ -1,7 +1,7 @@
 # First session Roman Numerals
-2020-03-25
+Date: 2020-03-25
 
-Given a positive integer number (eg 42) determine
+Given a positive integer number (e.g. 42), determine
 its Roman numeral representation as a String (eg "XLII").
 You cannot write numerals like IM for 999.
 Wikipedia states "Modern Roman numerals are written by
@@ -26,3 +26,12 @@ The 'digits' are as follows:
 |7 ->  "VII" | 70 ->  "LXX" | 700 ->  "DCC" |               |
 |8 -> "VIII" | 80 -> "LXXX" | 800 -> "DCCC" |               |
 |9 ->   "IX" | 90 ->   "XC" | 900 ->   "CM" |               |
+
+# Summary of session
+- In general liked the session and what they learned during it
+- if you know the exercise, don't prevent yourself from telling it
+- only refactor in fancy ways if you clearly see the pattern
+- Don't be afraid to take a step back from the code and look at the problem again
+- Participants were well prepared, tools worked almost perfectly
+- Would like to have real-world examples, closer to what we do in our daily work
+- Maybe we should do a couple of sessions in the current setup, then rotate
