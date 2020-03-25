@@ -3,30 +3,29 @@
 std::string ConvertArabicToRoman(int arabic) {
   std::string roman{};
 
-  int factor_fifty{arabic / 50};
-  if (factor_fifty > 0) {
+  while (arabic >= 50) {
     roman += "L";
     arabic -= 50;
   }
-
-  int factor_ten{arabic / 10};
-  arabic %= 10;
-  for (int i{0}; i < factor_ten; ++i) {
+  while (arabic >= 10) {
     roman += "X";
+    arabic -= 10;
   }
-
-  int factor_five{arabic / 5};
-  if (factor_five > 0) {
+  while (arabic >= 9) {
+    roman += "IX";
+    arabic -= 9;
+  }
+  while (arabic >= 5) {
     roman += "V";
     arabic -= 5;
   }
-
-  if (arabic == 4) {
+  while (arabic >= 4) {
     roman += "IV";
-  } else {
-    for (int i{0}; i < arabic; ++i) {
-      roman += "I";
-    }
+    arabic -= 4;
+  }
+  while (arabic >= 1) {
+    roman += "I";
+    arabic -= 1;
   }
 
   return roman;

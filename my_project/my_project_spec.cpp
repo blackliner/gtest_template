@@ -45,3 +45,7 @@ TEST(Roman, convert_sixtyseven) {
 TEST(Roman, convert_four) {
   EXPECT_EQ("IV", ConvertArabicToRoman(4));
 }
+
+TEST(Roman, convert_nine) {
+  EXPECT_EQ("IX", ConvertArabicToRoman(9));
+}
