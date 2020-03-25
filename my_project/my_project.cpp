@@ -1,31 +1,17 @@
 #include "my_project.hpp"
 
+#include <array>
+
 std::string ConvertArabicToRoman(int arabic) {
   std::string roman{};
+  std::array<int, 6> arabic_digits{50, 10, 9, 5, 4, 1};
+  std::array<std::string, 6> roman_digits{"L", "X", "IX", "V", "IV", "I"};
 
-  while (arabic >= 50) {
-    roman += "L";
-    arabic -= 50;
-  }
-  while (arabic >= 10) {
-    roman += "X";
-    arabic -= 10;
-  }
-  while (arabic >= 9) {
-    roman += "IX";
-    arabic -= 9;
-  }
-  while (arabic >= 5) {
-    roman += "V";
-    arabic -= 5;
-  }
-  while (arabic >= 4) {
-    roman += "IV";
-    arabic -= 4;
-  }
-  while (arabic >= 1) {
-    roman += "I";
-    arabic -= 1;
+  for (int i{0}; i < 6; ++i) {
+    while (arabic >= arabic_digits[i]) {
+      roman += roman_digits[i];
+      arabic -= arabic_digits[i];
+    }
   }
 
   return roman;
