@@ -34,3 +34,14 @@ TEST(Roman, convert_twentyone) {
   EXPECT_EQ("XXI", ConvertArabicToRoman(21));
 }
 
+TEST(Roman, convert_fifty) {
+  EXPECT_EQ("L", ConvertArabicToRoman(50));
+}
+
+TEST(Roman, convert_sixtyseven) {
+  EXPECT_EQ("LXVII", ConvertArabicToRoman(67));
+}
+
+TEST(Roman, convert_four) {
+  EXPECT_EQ("IV", ConvertArabicToRoman(4));
+}
