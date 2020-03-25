@@ -1,4 +1,6 @@
+#include<string>
 
-int CalculateEverything(){
-    return 42;
+std::string ConvertArabicToRoman(int)
+{
+  return "I";
 }
