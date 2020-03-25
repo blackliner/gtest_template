@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 3.10)
 
 PROJECT (
-  my_project
+  roman_numerals
   VERSION 0.0.0
   LANGUAGES CXX)
 
@@ -15,4 +15,4 @@ ENABLE_TESTING ()
 
 ADD_COMPILER_FLAGS ()
 
-ADD_SUBDIRECTORY (my_project)
+ADD_SUBDIRECTORY (roman_numerals)

@@ -1,4 +1,5 @@
+#pragma once
 
-int CalculateEverything(){
-    return 42;
-}
+#include <string>
+
+std::string ConvertIntToRoman(int);

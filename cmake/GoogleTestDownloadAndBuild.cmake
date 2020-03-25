@@ -3,18 +3,22 @@
 LIST (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR})
 INCLUDE (DownloadProject)
 
-DOWNLOAD_PROJECT (
-  PROJ
-  googletest
-  GIT_REPOSITORY
-  https://github.com/google/googletest.git
-  GIT_TAG
-  release-1.10.0
-  SOURCE_DIR
-  "${CMAKE_CURRENT_BINARY_DIR}/googletest-src"
-  BINARY_DIR
-  "${CMAKE_CURRENT_BINARY_DIR}/googletest-build"
-  ${UPDATE_DISCONNECTED_IF_AVAILABLE})
+# DOWNLOAD_PROJECT (
+#   PROJ
+#   googletest
+#   GIT_REPOSITORY
+#   https://github.com/google/googletest.git
+#   GIT_TAG
+#   release-1.10.0
+#   SOURCE_DIR
+#   "${CMAKE_CURRENT_BINARY_DIR}/googletest-src"
+#   BINARY_DIR
+#   "${CMAKE_CURRENT_BINARY_DIR}/googletest-build"
+#   ${UPDATE_DISCONNECTED_IF_AVAILABLE})
+
+set (googletest_SOURCE_DIR   "${CMAKE_CURRENT_BINARY_DIR}/googletest-src")
+set (googletest_BINARY_DIR   "${CMAKE_CURRENT_BINARY_DIR}/googletest-build")
+
 ADD_SUBDIRECTORY (${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 INCLUDE_DIRECTORIES (SYSTEM ${googletest_SOURCE_DIR})
 

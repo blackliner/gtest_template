@@ -16,5 +16,6 @@ ADD_COMPILE_OPTIONS ("-fdiagnostics-color=always")
 
 ADD_COMPILE_OPTIONS ("-Werror")
 ADD_COMPILE_OPTIONS ("-Wno-error=deprecated-declarations")
+ADD_COMPILE_OPTIONS ("-Wno-error=unused-but-set-parameter")
 
 ADD_COMPILE_OPTIONS ("-pedantic-errors")

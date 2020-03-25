@@ -6,4 +6,4 @@ TARGET_LINK_LIBRARIES (
     PRIVATE roman_numerals 
     PRIVATE gtest_main)
 
-ADD_GTEST(roman_numerals_spec)
+#ADD_GTEST(roman_numerals_spec)
