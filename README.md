@@ -9,10 +9,10 @@ expressing each arabic digit separately, starting with the
 leftmost digit, and skipping any digit with a value of zero."
 For example:
 
-1990 -> "MCMXC"  (1000 -> "M"  + 900 -> "CM" + 90 -> "XC")
-2008 -> "MMVIII" (2000 -> "MM" + 8 -> "VIII")
-  99 -> "XCIX"   (90 -> "XC" + 9 -> "IX")
-  47 -> "XLVII"  (40 -> "XL" + 7 -> "VII")
+* 1990 -> "MCMXC"  (1000 -> "M"  + 900 -> "CM" + 90 -> "XC")
+* 2008 -> "MMVIII" (2000 -> "MM" + 8 -> "VIII")
+* 99 -> "XCIX"     (90 -> "XC" + 9 -> "IX")
+* 47 -> "XLVII"    (40 -> "XL" + 7 -> "VII")
 
 The 'digits' are as follows:
 
