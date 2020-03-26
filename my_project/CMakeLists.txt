@@ -1,6 +1,6 @@
-ADD_LIBRARY(my_project my_project.cpp)
+ADD_LIBRARY(my_project roman_numerals.cpp)
 
-ADD_EXECUTABLE (my_project_spec my_project_spec.cpp)
+ADD_EXECUTABLE (my_project_spec roman_numerals_spec.cpp)
 TARGET_LINK_LIBRARIES (
     my_project_spec 
     PRIVATE my_project 

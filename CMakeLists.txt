@@ -6,7 +6,7 @@ PROJECT (
   LANGUAGES CXX)
 
 LIST (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-INCLUDE (CompilerWarnings-x86)
+#INCLUDE (CompilerWarnings-x86)
 INCLUDE (DownloadProject)
 INCLUDE (GoogleTestDownloadAndBuild)
 INCLUDE (adas_cmake_functions)
