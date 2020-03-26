@@ -19,3 +19,26 @@ TEST(RomanNumerals, convert_3) {
 
   EXPECT_EQ("III", out);
 }
+
+TEST(RomanNumerals, convert_5) {
+  std::string out = ConvertIntToRoman(5);
+
+  EXPECT_EQ("V", out);
+}
+
+TEST(RomanNumerals, convert_10) {
+  std::string out = ConvertIntToRoman(10);
+
+  EXPECT_EQ("X", out);
+}
+
+TEST(RomanNumerals, convert_20) {
+  std::string out = ConvertIntToRoman(20);
+
+  EXPECT_EQ("XX", out);
+}
+TEST(RomanNumerals, convert_4) {
+  std::string out = ConvertIntToRoman(4);
+
+  EXPECT_EQ("IV", out);
+}
