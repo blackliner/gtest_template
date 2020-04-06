@@ -14,7 +14,7 @@ using DataGrid = std::vector<std::vector<float>>;
 using LookupPoint = std::pair<float, float>;
 float Interpolate2D(const DataGrid& data_grid, const LookupPoint& lookup_point);
 ```
-The DataGrid can be expected to be a [rectilinear 2D grid](https://en.wikipedia.org/wiki/Rectilinear_grid "Rectilinear grid"). For the sake of this example we assume the non-negative indices x and y to be equal to the index. The entry at x, y is the corresponding z-value. Hence the following grid and lookup point:
+The DataGrid can be expected to be a [cartesian 2D grid](https://en.wikipedia.org/wiki/Regular_grid "Regular grid"). For the sake of this example we assume the non-negative indices x and y to be equal to the index. The entry at x, y is the corresponding z-value. Hence the following grid and lookup point:
 ```c++
 const DataGrid data_grid{{0.0F, 2.0F}, {1.0F, 3.0F}};
 // e.g. 1.0F == data_grid[1][0]
