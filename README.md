@@ -24,6 +24,10 @@ can be visualized as the following:
 
 ![enter image description here](https://i.ibb.co/5L4XdTg/image-5.png)
 
+
+## Example
+const DataGrid data_grid{{0.0F, 2.0F}, {1.0F, 3.0F}};
+
 ## Edge cases
 ---
 **If the lookup point is out of bounds, and therefore can not be mapped to either one or multiple grid entries, the algorithm should assert!**
