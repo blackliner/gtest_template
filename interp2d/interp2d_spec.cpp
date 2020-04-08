@@ -14,7 +14,7 @@ TEST(Interp2D, DirectlyUseOriginValueOne) {
   EXPECT_EQ(1.0F, Interpolate2D(data_grid, lookup_point));
 }
 
-TEST(Interp2D, DirectlyUseLookupPoint) {
+TEST(Interp2D, DirectlyUseLookupPointInXDirection) {
   const DataGrid data_grid{{1.0F}, {2.0F}};
   // data_grid[0][0] == 1.0F;
   // data_grid[1][0] == 2.0F;
@@ -32,20 +32,55 @@ TEST(Interp2D, InterpolateInX) {
   EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
 }
 
-TEST(Interp2D, InterpolateInX) {
+TEST(Interp2D, InterpolateInXfail) {
   const DataGrid data_grid{{1.0F}, {2.0F}};
   // (0,0) -> 1
   // (1,0) -> 2
   // (0.6,0) -> 1.6
-  const LookupPoint lookup_point{0.6F, 0.0F};
-  EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
+  const LookupPoint lookup_point{1.5F, 0.0F};
+  EXPECT_ANY_THROW(Interpolate2D(data_grid, lookup_point));
 }
 
+TEST(Interp2D, DirectlyUseLookupPointInYDirection) {
+  const DataGrid data_grid{{1.0F, 3.0F}};
+  const LookupPoint lookup_point{0.0F, 1.0F};
+  EXPECT_EQ(3.0F, Interpolate2D(data_grid, lookup_point));
+}
 
+TEST(Interp2D, InterpolateInYDirection) {
+  const DataGrid data_grid{{1.0F, 3.0F}};
+  const LookupPoint lookup_point{0.0F, .8F};
+  EXPECT_EQ(2.6F, Interpolate2D(data_grid, lookup_point));
+}
 
+TEST(Interp2D, InterpolateInSegment2) {
+  const DataGrid data_grid{{0.0F, 0.0F}, {1.0F, 8.0F}};
+  // (0,0) -> 0
+  // (0,1) -> 0
+  // (1,0) -> 1
+  // (1,1) -> 8
+  const LookupPoint lookup_point{0.5F, 1.0F};
+  EXPECT_EQ(4.0F, Interpolate2D(data_grid, lookup_point));
+}
 
+TEST(Interp2D, InterpolateWikiExample) {
+  const DataGrid data_grid{{162.0F, 91.0F}, {95.0F, 210.0F}};
+  const LookupPoint lookup_point{0.5F, 0.8F};
+  EXPECT_EQ(146.1F, Interpolate2D(data_grid, lookup_point));
+}
 
+TEST(Interp2D, InterpolateWikiExampleLargerLookupPoint) {
+  const DataGrid data_grid{
+      {0.0F, 0.0F, 0.0F, 0.0F}, {0.0F, 0.0F, 0.0F, 0.0F}, {0.0F, 0.0F, 162.0F, 91.0F}, {0.0F, 0.0F, 95.0F, 210.0F}};
+  const LookupPoint lookup_point{2.5F, 2.8F};
+  EXPECT_EQ(146.1F, Interpolate2D(data_grid, lookup_point));
+}
 
+TEST(Interp2D, InterpolateReadmeExample) {
+  const DataGrid data_grid{{0.0F, 2.0F}, {1.0F, 3.0F}};
+  const LookupPoint lookup_point{0.8F, 0.4F};
+  EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
+}
 
 // 4 Points on Grid
 // DataGrid data_grid{{1, 6}, {1, 3}};
@@ -64,8 +99,6 @@ TEST(Interp2D, InterpolateInX) {
 // |
 //  (x0)---(x1)-----> x
 
-
-
 // 6 Points on Grid
 // DataGrid data_grid{{1, 6}, {1, 3}, {5, 8}};
 //           x  y
@@ -76,7 +109,6 @@ TEST(Interp2D, InterpolateInX) {
 // data_grid[2][0] == 5
 // data_grid[2][1] == 8
 
-
 // Alternative: 6 Points on Grid
 // DataGrid data_grid{{1, 6, 7}, {1, 3, 4}};
 //           x  y
@@ -86,7 +118,6 @@ TEST(Interp2D, InterpolateInX) {
 // data_grid[1][0] == 1
 // data_grid[1][1] == 3
 // data_grid[1][2] == 4
-
 
 // 9 Points on Grid
 // DataGrid data_grid{{1, 6, 7}, {1, 3, 4}, {10, 2.4, 9}};
