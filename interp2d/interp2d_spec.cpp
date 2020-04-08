@@ -64,3 +64,10 @@ TEST(Interpolation, interpolate_in_the_middle) {
 
   EXPECT_FLOAT_EQ(1.5F, Interpolate2D(data_grid, lookup_point));
 }
+
+// Verify result
+TEST(Interp2D, FinalBoss) {
+  DataGrid data_grid{{0.0F, 2.0F}, {1.0F, 3.0F}};
+  LookupPoint lookup_point{0.8F, 0.4F};
+  EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
+}
