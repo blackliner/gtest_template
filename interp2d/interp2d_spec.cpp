@@ -32,7 +32,14 @@ TEST(Interp2D, InterpolateInX) {
   EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
 }
 
-
+TEST(Interp2D, InterpolateInX) {
+  const DataGrid data_grid{{1.0F}, {2.0F}};
+  // (0,0) -> 1
+  // (1,0) -> 2
+  // (0.6,0) -> 1.6
+  const LookupPoint lookup_point{0.6F, 0.0F};
+  EXPECT_EQ(1.6F, Interpolate2D(data_grid, lookup_point));
+}
 
 
 
