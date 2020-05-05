@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "my_project.hpp"
+#include "ring_buffer.hpp"
 
 TEST(First, test) {
   EXPECT_EQ(42, CalculateEverything());

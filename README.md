@@ -1,2 +1,1 @@
-# gtest_template
-Template for TDD sessions
+# SME SDD Session 3: Ring Buffer
