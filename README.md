@@ -38,10 +38,10 @@ class RingBuffer{
     explicit RingBuffer(const std::size_t);
     void push_front(const T& element);
     void push_back(const T& element);
-    T pop_front();
-    T pop_back();
-    T front();
-    T back();
+    T pop_front();  // Throws when empty
+    T pop_back();  // Throws when empty
+    T front();  // Throws when empty
+    T back();  // Throws when empty
     T at(std::size_t index);  // Checked access. Throws exception if out of bounds
     T operator[](const std::size_t index);  // Unchecked, fast access. Undefined behavior if out of bounds.
     bool empty();
