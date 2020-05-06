@@ -36,5 +36,5 @@ TEST(RingBuffer, check_overflow) {
   ring_buffer.push_back(1);
   ring_buffer.push_back(2);
   ring_buffer.push_back(3);
-  EXPECT_EQ(3, ring_buffer[0U]);
+  EXPECT_EQ(1, ring_buffer[0U]);
 }
