@@ -9,6 +9,13 @@ The ring_buffer only allocates memory when created or when the capacity is adjus
 
 ## Usage example and API
 
+To build and rund the tests:
+```bash
+mkdir -p build && cd build
+cmake ..
+cmake --build . --target test
+```
+
 ```c++
 RingBuffer<int> ring_buffer{3};  // Create a ring buffer with a capacity for 3 integers. Shall also support other types via template
 ring_buffer.push_back(4);
