@@ -40,10 +40,10 @@ class RingBuffer{
     void push_back(const T& element);
     T pop_front();  // Throws when empty
     T pop_back();  // Throws when empty
-    T front();  // Throws when empty
-    T back();  // Throws when empty
-    T at(std::size_t index);  // Checked access. Throws exception if out of bounds
-    T operator[](const std::size_t index);  // Unchecked, fast access. Undefined behavior if out of bounds.
+    T& front();  // Throws when empty
+    T& back();  // Throws when empty
+    T& at(std::size_t index);  // Checked access. Throws exception if out of bounds
+    T& operator[](const std::size_t index);  // Unchecked, fast access. Undefined behavior if out of bounds.
     bool empty();
     bool full();
     std::size_t size();
@@ -53,7 +53,7 @@ class RingBuffer{
 };
 ```
 
-If you are super-fast, you can work on (const) reference accessors and (reverse) iterators, as described in the [boost documentation](https://www.boost.org/doc/libs/1_48_0/libs/circular_buffer/doc/circular_buffer.html).
+If you are super-fast, you can work on const reference accessors and (reverse) iterators, as described in the [boost documentation](https://www.boost.org/doc/libs/1_48_0/libs/circular_buffer/doc/circular_buffer.html).
 
 ## Comments
 
