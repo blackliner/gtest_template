@@ -27,13 +27,14 @@ TEST(RingBuffer, check_access_operator) {
   ring_buffer.push_back(0);
   ring_buffer.push_back(25);
   EXPECT_EQ(25, ring_buffer[1U]);
+  EXPECT_EQ(2U, ring_buffer.size());
 }
 
-// TEST(RingBuffer, check_overflow) {
-//   RingBuffer<int> ring_buffer{3U};
-//   ring_buffer.push_back(0);
-//   ring_buffer.push_back(1);
-//   ring_buffer.push_back(2);
-//   ring_buffer.push_back(3);
-//   EXPECT_EQ(3, ring_buffer[0U]);
-// }
+TEST(RingBuffer, check_overflow) {
+  RingBuffer<int> ring_buffer{3U};
+  ring_buffer.push_back(0);
+  ring_buffer.push_back(1);
+  ring_buffer.push_back(2);
+  ring_buffer.push_back(3);
+  EXPECT_EQ(3, ring_buffer[0U]);
+}
